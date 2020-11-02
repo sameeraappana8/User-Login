@@ -1,7 +1,6 @@
 package com.userlogin.service;
 
 import java.util.List;
-
 import org.springframework.stereotype.Service;
 import com.userlogin.entity.User;
 import com.userlogin.exception.ResourceNotFoundException;
@@ -26,7 +25,7 @@ public class UserServiceImpl implements UserService{
 		
 		return userRepository.save(user);
 	}
-
+	
 	@Override
 	public List<User> getAllUser() {
 		return this.userRepository.findAll();

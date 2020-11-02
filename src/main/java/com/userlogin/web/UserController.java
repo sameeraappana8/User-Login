@@ -1,11 +1,9 @@
 package com.userlogin.web;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,11 +43,11 @@ public class UserController {
 //				.orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
 	}
 	
-	// create user
-	@PostMapping("/users")
-	public User createUser(@RequestBody User user) {
-		return this.userRepository.save(user);
-	}
+//	// create user
+//	@PostMapping("/users")
+//	public User createUser(@RequestBody User user) {
+//		return this.userRepository.save(user);
+//	}
 	
 	// update user
 	@PutMapping("/users/{id}")

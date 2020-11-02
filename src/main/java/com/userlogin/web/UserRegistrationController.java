@@ -28,7 +28,7 @@ public class UserRegistrationController {
 		this.userService = userService;
 	}
 	
-	@PostMapping("/registration")
+	@PostMapping("/new")
 	public String registerUserAccount(@RequestBody UserRegistrationDto registrationDto) {
 		userService.save(registrationDto);
 		return "Success";
