@@ -1,4 +1,4 @@
-package com.userlogin.controller;
+package com.userlogin.web;
 
 import java.util.List;
 

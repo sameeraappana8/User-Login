@@ -1,21 +1,28 @@
 package com.userlogin.entity;
 
+import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	@GeneratedValue
+	private Long id;
 	
 	@Column(name="first_name", nullable = false)
 	private String firstName;
@@ -29,24 +36,30 @@ public class User {
 	@Column(name="password", nullable = false)
 	private String password;
 	
-//	@Column(name="last_login_date")
-//	private Date lastLoginDate;
+	@Column(name="last_login_date")
+	private Date lastLoginDate;
+	
+	@Column(name="role")
+	private String role;
 	
 	public User() {
 		
 	}
 	
-	public User(String firstName, String lastName, String email, String password) {
+	public User(String firstName, String lastName, String email, String password, String role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+		this.role = role;
 	}
-	public long getId() {
+
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {
@@ -73,12 +86,20 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-//	public Date getLastLoginDate() {
-//		return lastLoginDate;
-//	}
-//	public void setLastLoginDate(Date lastLoginDate) {
-//		this.lastLoginDate = lastLoginDate;
-//	}
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	
 }
