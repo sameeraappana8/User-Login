@@ -1,5 +1,6 @@
 package com.userlogin.entity;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 
@@ -37,22 +38,18 @@ public class User {
 	private String password;
 	
 	@Column(name="last_login_date")
-	private Date lastLoginDate;
-	
-	@Column(name="role")
-	private String role;
-	
+	private LocalDateTime lastLoginDate;
+
 	public User() {
 		
 	}
 	
-	public User(String firstName, String lastName, String email, String password, String role) {
+	public User(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.role = role;
 	}
 
 
@@ -86,20 +83,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getLastLoginDate() {
+	public LocalDateTime getLastLoginDate() {
 		return lastLoginDate;
 	}
-	public void setLastLoginDate(Date lastLoginDate) {
+	public void setLastLoginDate(LocalDateTime lastLoginDate) {
 		this.lastLoginDate = lastLoginDate;
 	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
 	
 }
