@@ -1,6 +1,6 @@
 # USER LOGIN APPLICATION
 
-This application provides endpoint to perform CRUD operations on users.
+This application provides endpoints to perform CRUD operations on users.
 
 Architectural Analysis:
 
